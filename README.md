@@ -50,7 +50,7 @@ Candidate Models Evaluation:
 │ Whisper Small ✅     │ 244M     │ ~6GB     │ ✅ Optimal balance  │
 │ Whisper Tiny        │ 39M      │ 3GB      │ ❌ Low accuracy     │
 └─────────────────────┴──────────┴──────────┴────────────────────┘
-
+```
 ### LoRA Configuration (Empirically Tuned)
 
 | Parameter         | Value     | Justification |
@@ -60,7 +60,7 @@ Candidate Models Evaluation:
 | **lora_dropout**  | 0.05      | Light regularization |
 | **target_modules**| `q_proj`, `v_proj` | Attention layers only |
 | **Trainable**     | ~1.2M (0.49%) | Efficient domain adaptation |
-
+```
 ### Training Setup
 - **Hardware:** Google Colab T4 (15GB VRAM)
 - **Batch size:** 4 (effective 8 with gradient accumulation)
@@ -78,7 +78,7 @@ Candidate Models Evaluation:
 | **Baseline (LocalDoc)**| —         | —         | —               |
 | **Fine-tuned (LoRA)**  | —         | —         | ✅ Improved     |
 | **Production Target**  | **<10.0** | **<5.0**  | —               |
-
+```
 ### Training Dynamics
 
 | Metric          | Initial | Final  | Change   | Interpretation          |
