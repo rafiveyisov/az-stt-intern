@@ -1,5 +1,5 @@
 
-```
+
 # 🎙️ Azerbaijani ASR — Whisper Fine-Tuning with LoRA
 
 <div align="center">
@@ -11,7 +11,7 @@
   
   **Low-Resource Language ASR • Parameter-Efficient Fine-Tuning • Production-Ready Pipeline**
 </div>
-```
+
 
 ## 📌 Executive Summary
 
@@ -73,7 +73,7 @@ Candidate Models Evaluation:
 - **Checkpoint:** Best validation WER
 ```
 ---
-
+```
 ## 📊 Results & Analysis
 
 ### Performance
@@ -101,7 +101,7 @@ Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting*
 - **Morphological Errors:** 20%
 - **Named Entities:** 15%
 - **Tokenization:** 5%
-
+```
 ### Audio Condition Performance
 
 | Condition                          | WER Range | Verdict             | Recommendation             |
@@ -110,7 +110,7 @@ Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting*
 | Long complex sentences             | 50-85%    | ⚠️ Marginal         | Chunking                   |
 | Rare terms / proper nouns          | 50-100%   | ⚠️ Marginal         | Entity LM / post-processing|
 | Noisy / dialectal                  | 60-80%    | ❌ Needs work        | Data augmentation          |
-
+```
 ---
 
 ## ⚡ Quick Start
