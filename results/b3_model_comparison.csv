@@ -1,0 +1,3 @@
+Model,WER (%),CER (%)
+Baza Model,22.65,7.0
+Fine-tuned Model,23.06,7.65

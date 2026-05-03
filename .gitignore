@@ -1,0 +1,41 @@
+# Dataset
+az/
+*.wav
+*.mp3
+*.flac
+
+# Model checkpoint-ləri
+whisper-small-az-lora/
+checkpoint-*/
+
+# Sənədlər
+*.docx
+*.doc
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual mühit
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Nəticələr (optional - əgər qrafikləri push etmək istəyirsənsə bu sətri sil)
+# results/
+
+# OS
+.DS_Store
+Thumbs.db

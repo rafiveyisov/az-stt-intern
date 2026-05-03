@@ -1,0 +1,12 @@
+torch
+transformers
+peft
+accelerate
+datasets
+evaluate
+jiwer
+librosa
+soundfile
+pandas
+matplotlib
+tqdm
