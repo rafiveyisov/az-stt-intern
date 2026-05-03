@@ -108,7 +108,7 @@ Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting*
 
 ```
 ## ⚡ Quick Start
-
+```
 ### Prerequisites
 - Python 3.10+
 - CUDA 11.8+ (GPU recommended)
