@@ -120,7 +120,7 @@ Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting*
 git clone https://github.com/rafiveyisov/azerbaijani-asr-whisper.git
 cd azerbaijani-asr-whisper
 pip install -r requirements.txt
-
+```
 ### Dataset Structure
 
 data/
@@ -128,7 +128,7 @@ data/
 ├── train.tsv       # path\ttranscript
 ├── dev.tsv
 └── test.tsv
-
+```
 ### Training & Evaluation
 
 
