@@ -42,7 +42,7 @@ Azerbaijani presents unique challenges for ASR systems:
 
 ### Model Selection
 
-```ascii
+
 Candidate Models Evaluation:
 ┌─────────────────────┬──────────┬──────────┬────────────────────┐
 │ Model               │ Params   │ VRAM     │ Decision           │
@@ -52,7 +52,7 @@ Candidate Models Evaluation:
 │ Whisper Small ✅     │ 244M     │ ~6GB     │ ✅ Optimal balance  │
 │ Whisper Tiny        │ 39M      │ 3GB      │ ❌ Low accuracy     │
 └─────────────────────┴──────────┴──────────┴────────────────────┘
-```
+
 
 ### LoRA Configuration (Empirically Tuned)
 
