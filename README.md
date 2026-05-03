@@ -23,7 +23,7 @@ The solution is optimized for resource-constrained environments (Google Colab T4
 
 
 ## 🎯 Problem Statement
-
+```
 Azerbaijani presents unique challenges for ASR systems:
 
 | Challenge                    | Impact                              | Example                          |
@@ -34,13 +34,13 @@ Azerbaijani presents unique challenges for ASR systems:
 | **Vowel Harmony**            | Suffix variant confusion            | `ərazisindən` → `ərazisində`    |
 
 **Production Target:** WER < 10%
-
+```
 ---
 ## 🏗️ Architecture & Design Decisions
 
 ### Model Selection
 
-
+```
 Candidate Models Evaluation:
 ┌─────────────────────┬──────────┬──────────┬────────────────────┐
 │ Model               │ Params   │ VRAM     │ Decision           │
@@ -68,11 +68,11 @@ Candidate Models Evaluation:
 - **Steps:** 200
 - **Eval frequency:** Every 20 steps
 - **Checkpoint:** Best validation WER
-  
+```
 ## 📊 Results & Analysis
 
 ### Performance
-
+```
 | Model                  | WER (%) ↓ | CER (%) ↓ | Status          |
 |------------------------|-----------|-----------|-----------------|
 | **Baseline (LocalDoc)**| —         | —         | —               |
@@ -86,7 +86,7 @@ Candidate Models Evaluation:
 | Train Loss      | 2.849   | 0.872  | ↓69%     | Rapid convergence       |
 | Val Loss        | 1.995   | 1.003  | ↓50%     | No divergence           |
 | Val WER         | —       | —      | ↓        | Steady improvement      |
-
+```
 **Overfitting Diagnostic:**  
 Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting** ✅
 
@@ -96,7 +96,7 @@ Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting*
 - **Morphological Errors:** 20%
 - **Named Entities:** 15%
 - **Tokenization:** 5%
-
+```
 ### Audio Condition Performance
 
 | Condition                          | WER Range | Verdict             | Recommendation             |
@@ -106,7 +106,7 @@ Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting*
 | Rare terms / proper nouns          | 50-100%   | ⚠️ Marginal         | Entity LM / post-processing|
 | Noisy / dialectal                  | 60-80%    | ❌ Needs work        | Data augmentation          |
 
-
+```
 ## ⚡ Quick Start
 
 ### Prerequisites
@@ -166,7 +166,7 @@ azerbaijani-asr-whisper/
 **Target:** WER 8–12%
 
 ---
-
+```
 ## ⚠️ Known Limitations & Mitigation
 
 | Limitation               | Mitigation                          |
@@ -175,7 +175,7 @@ azerbaijani-asr-whisper/
 | Model capacity           | Upgrade to Whisper Medium/Large     |
 | Real-world noise         | Audio augmentation (MUSAN etc.)     |
 | Proper nouns             | Post-processing + custom LM         |
-
+```
 ---
 
 ## 📄 Citation & License
@@ -193,7 +193,3 @@ azerbaijani-asr-whisper/
 **Dataset License:** CC0-1.0 (Mozilla Common Voice)
 
 ```
-
----
-
-**İstədiyin dəyişikliklər varsa** (məsələn, konkret WER nəticələri əlavə etmək, şəkil linkləri, başqa bölmə və s.) de, dərhal düzəldim!
