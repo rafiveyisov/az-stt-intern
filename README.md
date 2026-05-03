@@ -22,7 +22,6 @@ The solution is optimized for resource-constrained environments (Google Colab T4
 **Key Achievement:** Successful fine-tuning with only 200 training samples and zero overfitting. The main bottleneck is data volume, not the methodology.
 
 
-```
 ## 🎯 Problem Statement
 
 Azerbaijani presents unique challenges for ASR systems:
@@ -37,12 +36,11 @@ Azerbaijani presents unique challenges for ASR systems:
 **Production Target:** WER < 10%
 
 ---
-```
 ## 🏗️ Architecture & Design Decisions
 
 ### Model Selection
 
-```
+
 Candidate Models Evaluation:
 ┌─────────────────────┬──────────┬──────────┬────────────────────┐
 │ Model               │ Params   │ VRAM     │ Decision           │
@@ -52,8 +50,7 @@ Candidate Models Evaluation:
 │ Whisper Small ✅     │ 244M     │ ~6GB     │ ✅ Optimal balance  │
 │ Whisper Tiny        │ 39M      │ 3GB      │ ❌ Low accuracy     │
 └─────────────────────┴──────────┴──────────┴────────────────────┘
-```
-```
+
 ### LoRA Configuration (Empirically Tuned)
 
 | Parameter         | Value     | Justification |
@@ -63,7 +60,7 @@ Candidate Models Evaluation:
 | **lora_dropout**  | 0.05      | Light regularization |
 | **target_modules**| `q_proj`, `v_proj` | Attention layers only |
 | **Trainable**     | ~1.2M (0.49%) | Efficient domain adaptation |
-```
+
 ### Training Setup
 - **Hardware:** Google Colab T4 (15GB VRAM)
 - **Batch size:** 4 (effective 8 with gradient accumulation)
@@ -71,9 +68,7 @@ Candidate Models Evaluation:
 - **Steps:** 200
 - **Eval frequency:** Every 20 steps
 - **Checkpoint:** Best validation WER
-```
----
-```
+  
 ## 📊 Results & Analysis
 
 ### Performance
@@ -101,7 +96,7 @@ Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting*
 - **Morphological Errors:** 20%
 - **Named Entities:** 15%
 - **Tokenization:** 5%
-```
+
 ### Audio Condition Performance
 
 | Condition                          | WER Range | Verdict             | Recommendation             |
@@ -110,8 +105,7 @@ Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting*
 | Long complex sentences             | 50-85%    | ⚠️ Marginal         | Chunking                   |
 | Rare terms / proper nouns          | 50-100%   | ⚠️ Marginal         | Entity LM / post-processing|
 | Noisy / dialectal                  | 60-80%    | ❌ Needs work        | Data augmentation          |
-```
----
+
 
 ## ⚡ Quick Start
 
@@ -122,37 +116,34 @@ Generalization gap (Val Loss - Train Loss) = 0.131 (< 0.3) → **No overfitting*
 
 ### Installation
 
-```bash
+
 git clone https://github.com/rafiveyisov/azerbaijani-asr-whisper.git
 cd azerbaijani-asr-whisper
 pip install -r requirements.txt
-```
 
 ### Dataset Structure
 
-```
 data/
 ├── clips/          # .wav files (16kHz, mono)
 ├── train.tsv       # path\ttranscript
 ├── dev.tsv
 └── test.tsv
-```
 
 ### Training & Evaluation
 
-```bash
+
 # Fine-tuning
 python part_b/fine_tune.py
 
 # Evaluation
 python part_c/evaluate.py
-```
+
 
 ---
 
 ## 📁 Repository Structure
 
-```
+
 azerbaijani-asr-whisper/
 ├── README.md
 ├── requirements.txt
@@ -162,9 +153,8 @@ azerbaijani-asr-whisper/
 ├── results/          # Plots, metrics, checkpoints
 ├── report.pdf
 └── .gitignore
-```
 
----
+
 
 ## 🚀 Production Roadmap
 
